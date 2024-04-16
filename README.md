@@ -31,3 +31,7 @@ L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle
 1. Alla mia funzione di creazione della _password_, passerò come anticipato prima il `parametro range` che creerà dei caratteri random tramite un ciclo.
    Quando il ciclo finirà ritornerò il valore della scringa generata casualmente come `return`.
 1. Stampo il risultato della mia funzione a schermo.
+
+1. Al `submit` se tutto è andato a buon fine faccio atterrare l'utente in un'altra pagina contente la _password_ generata.
+
+1. _BONUS 2:_ Creo delle `checkbox` per far scegliere all'utente cosa utilizzare per la creazione della _password_
