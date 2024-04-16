@@ -18,8 +18,8 @@
   <div class="container-xl my-5">
     <h2 class="text-center my-5">Questa è la tua password generata:</h2>
     <h4 class="text-center">
-      Password:
-      <?php echo $password ?>
+      Password: <span class="fw-bold "><?php echo $password ?></span>
+      
     </h4>
   </div>
   </body>
