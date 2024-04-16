@@ -1,5 +1,35 @@
 <?php 
 
+
+// $n = $_POST['range'];
+$my_password;
+
+function getPassword($n) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?&%$<>^+-*/()[]{}@#_=';
+    $randomString = '';
+
+    for ($i = 0; $i < $n; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $randomString .= $characters[$index];
+    }
+    return $randomString;
+}
+
+
+if(isset($_POST['range'])){
+    // apro la sessione
+    // session_start();
+    // salvo l'email in sessione
+
+    $my_password = getPassword($_POST['range']);
+
+    // reindirizzo alla success.php
+    // header('Location: ./success.php');
+    var_dump($my_password);
+}
+
+
+
 include_once __DIR__ . '/partials/head.php';
 include_once __DIR__ . '/partials/header.php';
 ?>
@@ -12,7 +42,7 @@ include_once __DIR__ . '/partials/header.php';
       <form action="index.php" method="POST">
         <label class="form-label my-5" for="customRange1">Inserisci un valore da <span   class=" fw-bold ">minimo</span> 4 ad un <span class="fw-bold">massimo<span> di 24</label>
         <div class="range" data-mdb-range-init>
-          <input type="range" class="form-range" min="4" max="24" id="range" />     
+          <input type="range" class="form-range" min="4" max="24" name="range" />     
         </div>
         <div class="d-flex justify-content-center my-5">
           <!-- invio -->
