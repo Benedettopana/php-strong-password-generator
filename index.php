@@ -49,20 +49,14 @@ if(isset($_POST['range'])){
           $chose['numeri'] = true;
           $chose['speciali'] = true;
         }
-
-        // var_dump($chose);
       }
     }
-    // if(!$_POST['minuscole']){
 
-    // }
     $my_password = getPassword($_POST['range'], $chose);
-    // var_dump($my_password);
     $_SESSION['gen_password'] = $my_password;
 
     // reindirizzo alla success.php
     header('Location: ./partials/success.php');
-    // var_dump($my_password);
 }
 
 include_once __DIR__ . '/partials/head.php';
