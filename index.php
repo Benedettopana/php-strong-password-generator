@@ -75,7 +75,7 @@ include_once __DIR__ . '/partials/header.php';
         <!-- RADIO -->
         <div class=" d-flex  flex-column  justify-content-center  align-items-center my-5">
           <h5 class="text-center my-3">Consentire la ripetizione dei caratteri?</h5>
-        <div class="form-check">
+        <div class="form-check my-3">
           <input class="form-check-input" type="radio" name="ripetizione" value="true" id="flexRadioDefault1" checked/>
           <label class="form-check-label" for="flexRadioDefault1"> Ripetere </label>
         </div>
