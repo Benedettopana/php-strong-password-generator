@@ -8,6 +8,7 @@
     header('Location: ../index.php');
   }else{
     $password = $_SESSION['gen_password'];
+    var_dump($password);
   }
 
   include_once __DIR__ . '/head.php';
