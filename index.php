@@ -52,7 +52,7 @@ if(isset($_POST['range'])){
       }
     }
 
-    $my_password = getPassword($_POST['range'], $chose);
+    $my_password = getPassword($_POST['range'], $chose, $_POST['ripetizione']);
     $_SESSION['gen_password'] = $my_password;
 
     // reindirizzo alla success.php
@@ -72,7 +72,21 @@ include_once __DIR__ . '/partials/header.php';
         <div class="range" data-mdb-range-init>
           <input type="range" class="form-range" min="4" max="24" name="range" />     
         </div>
+        <!-- RADIO -->
+        <div class=" d-flex  flex-column  justify-content-center  align-items-center my-5">
+          <h5 class="text-center my-3">Consentire la ripetizione dei caratteri?</h5>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ripetizione" value="true" id="flexRadioDefault1" checked/>
+          <label class="form-check-label" for="flexRadioDefault1"> Ripetere </label>
+        </div>
 
+        <!-- Default checked radio -->
+        <div class="form-check">
+          <input class="form-check-input" type="radio"         name="ripetizione" value="false" id="flexRadioDefault2" />
+          <label class="form-check-label" for="flexRadioDefault2"> Non Ripetere </label>
+        </div>         
+        </div>
+        <!-- /RADIO -->
         <!-- Checkbox -->
         <h5 class="text-center">Selezionare che tipo di caratteri utilizzare (default tutti)</h5>
         <div class=" d-flex justify-content-center justify-content-between  my-5">

@@ -1,6 +1,10 @@
 <?php
-function getPassword($n, $chose) {
-  // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?&%$<>^+-*/()[]{}@#_=';
+function getPassword($n, $chose, $ripetizione) {
+  $ripeti_carattere = true;
+  if($ripetizione == 'false'){
+    $ripeti_carattere = false;
+  }
+
   $minuscole = 'abcdefghijklmnopqrstuvwxyz';
   $maiuscole = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   $numeri = '0123456789';
@@ -13,7 +17,16 @@ function getPassword($n, $chose) {
     if($chose['speciali']) $characters .= $speciali;
   for ($i = 0; $i < $n; $i++) {
       $index = rand(0, strlen($characters) - 1);
-      $randomString .= $characters[$index];
+      if(!$ripeti_carattere){
+        if(!str_contains($randomString, $characters[$index])){
+          $randomString .= $characters[$index];
+        }else{
+          $i--;
+        }
+      }else{
+        $randomString .= $characters[$index];
+      }
+      
   }
   return $randomString;
 }
