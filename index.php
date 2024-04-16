@@ -43,12 +43,12 @@ if(isset($_POST['range'])){
           $counter++;
         } 
 
-        if($counter == 0){
-          $chose['minuscole'] = true;
-          $chose['maiuscole'] = true;
-          $chose['numeri'] = true;
-          $chose['speciali'] = true;
-        }
+      }
+      if($counter == 0){
+        $chose['minuscole'] = true;
+        $chose['maiuscole'] = true;
+        $chose['numeri'] = true;
+        $chose['speciali'] = true;
       }
     }
 
