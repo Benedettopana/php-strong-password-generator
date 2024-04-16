@@ -1,41 +1,28 @@
 <?php 
-
+  require_once __DIR__ . '/data/functions.php';
 
 // $n = $_POST['range'];
 $my_password;
 
-function getPassword($n) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?&%$<>^+-*/()[]{}@#_=';
-    $randomString = '';
-
-    for ($i = 0; $i < $n; $i++) {
-        $index = rand(0, strlen($characters) - 1);
-        $randomString .= $characters[$index];
-    }
-    return $randomString;
-}
 
 
 if(isset($_POST['range'])){
     // apro la sessione
-    // session_start();
+    session_start();
     // salvo l'email in sessione
-
     $my_password = getPassword($_POST['range']);
+    $_SESSION['gen_password'] = $my_password;
 
     // reindirizzo alla success.php
-    // header('Location: ./success.php');
-    var_dump($my_password);
+    header('Location: ./partials/success.php');
+    // var_dump($my_password);
 }
-
-
 
 include_once __DIR__ . '/partials/head.php';
 include_once __DIR__ . '/partials/header.php';
 ?>
 
 
-<body>
   <div class="container-xl d-flex justify-content-center  my-5">
     <!-- FORM -->
     <div class="containe-md">

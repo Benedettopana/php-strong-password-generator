@@ -28,3 +28,4 @@
   <link rel="stylesheet" href="css/style.css">
   <title>PHP Strong Password Generator</title>
 </head>
+<body>
